@@ -1,0 +1,10 @@
+.profile__add {
+  background-color: #000;
+  border: 2px solid #fff;
+  opacity: 1;
+  transition: opacity .2s ease-in-out;
+}
+
+.profile__add:hover {
+  opacity: .6;
+}

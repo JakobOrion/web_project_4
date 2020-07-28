@@ -1,0 +1,3 @@
+.photo-card__title {
+  text-overflow: ellipsis;
+}
