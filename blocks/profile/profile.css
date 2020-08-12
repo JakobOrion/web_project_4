@@ -15,6 +15,11 @@
   justify-content: space-between;
 }
 
+@media screen and (max-width: 919px) {
+  .profile {
+    justify-content: center;
+  }
+}
 
 @media screen and (max-width: 619px) {
   .profile {

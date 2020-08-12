@@ -6,6 +6,14 @@
   overflow-wrap: break-word;
 }
 
+@media screen and (max-width: 919px) {
+  .profile__info {
+    flex-grow: unset;
+    max-width: unset;
+    margin: -3px 30px 36px;
+  }
+}
+
 @media screen and (max-width: 619px) {
   .profile__info {
     max-width: 80%;
