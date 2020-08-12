@@ -8,7 +8,7 @@ const profileName = document.querySelector('.profile__name');
 const profileDescription = document.querySelector('.profile__description');
 
 function togglePopup() {
-  popup.classList.toggle('popup_open');
+  popup.classList.toggle('popup_opened');
 
   nameInput.value = profileName.textContent;
   descriptionInput.value = profileDescription.textContent;

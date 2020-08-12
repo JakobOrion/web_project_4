@@ -2,5 +2,6 @@
   border-radius: 50%;
   max-width: 120px;
   max-height: 120px;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
 }

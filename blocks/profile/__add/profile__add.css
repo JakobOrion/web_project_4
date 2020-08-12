@@ -1,6 +1,5 @@
 .profile__add {
-  align-self: center;
-  margin: 0 auto;
+  margin: 0;
   width: 150px;
   height: 50px;
   background-color: #000;
@@ -8,6 +7,8 @@
   background-position: center;
   background-repeat: no-repeat;
   border: 2px solid #fff;
+  border-radius: 2px;
+  box-sizing: border-box;
   opacity: 1;
   transition: opacity .2s ease-in-out;
   cursor: pointer;
@@ -15,4 +16,12 @@
 
 .profile__add:hover {
   opacity: .6;
+}
+
+
+@media screen and (max-width: 619px) {
+  .profile__add {
+    width: 282px;
+    background-size: 16px;
+  }
 }

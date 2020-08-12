@@ -5,4 +5,13 @@
   font-weight: normal;
   font-size: 18px;
   line-height: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 619px) {
+  .footer__copyright {
+    font-size: 14px;
+    line-height: 17px;
+  }
 }

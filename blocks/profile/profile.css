@@ -12,4 +12,13 @@
   color: #fff;
   padding: 0;
   margin: 0 0 52px;
+  justify-content: space-between;
+}
+
+
+@media screen and (max-width: 619px) {
+  .profile {
+    margin: 0 0 36px;
+    flex-direction: column;
+  }
 }
