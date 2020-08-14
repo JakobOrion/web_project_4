@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Around the U.S.</title>
+  <link rel="stylesheet" href="pages/index.css">
+</head>
+<body class="page">
+  <div class="page__container">
+    <header class="header">
+      <img class="logo" src="images/around_us_logo.svg" alt="Around the U.S. logo">
+    </header>
+
+    <main class="content">
+      <section class="profile">
+        <img class="profile__avatar" src="images/avatar.jpg" alt="">
+        <div class="profile__info">
+          <h1 class="profile__name">Jacques Cousteau</h1>
+          <button class="profile__edit"></button>
+          <p class="profile__description">Explorer</p>
+        </div>
+        <button class="profile__add"></button>
+      </section>
+
+      <section class="photo-card">
+        <ul class="photo-card__group">
+          <li class="photo-card__item">
+            <img class="photo-card__image" src="images/yosemite_valley.jpg" alt="Yosemite Valley">
+            <h2 class="photo-card__title">Yosemite Valley</h2>
+            <button class="photo-card__heart"></button>
+          </li>
+          <li class="photo-card__item">
+            <img class="photo-card__image" src="images/lake_louise.jpg" alt="Lake Louise">
+            <h2 class="photo-card__title">Lake Louise</h2>
+            <button class="photo-card__heart"></button>
+          </li>
+          <li class="photo-card__item">
+            <img class="photo-card__image" src="images/bald_mountains.jpg" alt="Bald Mountains">
+            <h2 class="photo-card__title">Bald Mountains</h2>
+            <button class="photo-card__heart"></button>
+          </li>
+          <li class="photo-card__item">
+            <img class="photo-card__image" src="images/latemar.jpg" alt="Latemar">
+            <h2 class="photo-card__title">Latemar</h2>
+            <button class="photo-card__heart"></button>
+          </li>
+          <li class="photo-card__item">
+            <img class="photo-card__image" src="images/vanoise_park.jpg" alt="Vanoise National Park">
+            <h2 class="photo-card__title">Vanoise National Park</h2>
+            <button class="photo-card__heart"></button>
+          </li>
+          <li class="photo-card__item">
+            <img class="photo-card__image" src="images/lago_di_braies.jpg" alt="Lago di Braies">
+            <h2 class="photo-card__title">Lago di Braies</h2>
+            <button class="photo-card__heart"></button>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <p class="footer__copyright">© 2020 Around The U.S.</p>
+    </footer>
+  </div>
+
+  <section class="popup">
+    <div class="popup__container">
+      <h3 class="popup__title">Edit profile</h3>
+      <button class="popup__close"></button>
+      <form class="form__profile-edit">
+        <input type="text" class="form__input form__input_type_name" value="Jacques Cousteau" placeholder="Name">
+        <input type="text" class="form__input form__input_type_description" value="Explorer" placeholder="About me">
+        <button type="submit" class="form__submit">Save</button>
+      </form>
+    </div>
+  </section>
+
+  <script src="scripts/index.js"></script>
+</body>
+</html>
