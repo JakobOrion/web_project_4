@@ -4,7 +4,7 @@
 
 ### Around The U.S.
 
-
+The "Around The U.S." project will produce an interactive page over several sprints where users can add, remove, or like photos.
 
 ### Functionality and Technologies demonstrated
 
