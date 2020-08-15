@@ -10,8 +10,10 @@ const profileDescription = document.querySelector('.profile__description');
 function togglePopup() {
   popup.classList.toggle('popup_opened');
 
-  nameInput.value = profileName.textContent;
-  descriptionInput.value = profileDescription.textContent;
+  if (popup.classList.contains('popup_opened')) {
+    nameInput.value = profileName.textContent;
+    descriptionInput.value = profileDescription.textContent;
+  }
 }
 
 editProfileButton.addEventListener('click', togglePopup)
