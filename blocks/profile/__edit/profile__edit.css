@@ -1,4 +1,6 @@
 .profile__edit {
+  padding: 0;
+  margin: 0;
   display: inline-flex;
   width: 24px;
   height: 24px;
