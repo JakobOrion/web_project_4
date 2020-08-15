@@ -16,15 +16,17 @@ function togglePopup() {
   }
 }
 
-editProfileButton.addEventListener('click', togglePopup)
-
-closeEditProfileButton.addEventListener('click', togglePopup)
-
-form.addEventListener('submit', function(e) {
+function profileSubmit(e) {
   e.preventDefault();
 
   profileName.textContent = nameInput.value;
   profileDescription.textContent = descriptionInput.value;
 
-  togglePopup()
-})
+  togglePopup();
+}
+
+editProfileButton.addEventListener('click', togglePopup)
+
+closeEditProfileButton.addEventListener('click', togglePopup)
+
+form.addEventListener('submit', profileSubmit)
