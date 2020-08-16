@@ -14,46 +14,46 @@
 
     <main class="content">
       <section class="profile">
-        <img class="profile__avatar" src="images/avatar.jpg" alt="">
+        <img class="profile__avatar" src="images/avatar.jpg" alt="Profile Avatar Image">
         <div class="profile__info">
           <h1 class="profile__name">Jacques Cousteau</h1>
-          <button class="profile__edit"></button>
+          <button aria-label="Edit Profile" class="profile__edit"></button>
           <p class="profile__description">Explorer</p>
         </div>
-        <button class="profile__add"></button>
+        <button aria-label="Add Photo Card" class="profile__add"></button>
       </section>
 
-      <section class="photo-card">
-        <ul class="photo-card__group">
-          <li class="photo-card__item">
+      <section class="photo-cards">
+        <ul class="photo-cards__group">
+          <li class="photo-card">
             <img class="photo-card__image" src="images/yosemite_valley.jpg" alt="Yosemite Valley">
             <h2 class="photo-card__title">Yosemite Valley</h2>
-            <button class="photo-card__heart"></button>
+            <button aria-label="Like" class="photo-card__heart"></button>
           </li>
-          <li class="photo-card__item">
+          <li class="photo-card">
             <img class="photo-card__image" src="images/lake_louise.jpg" alt="Lake Louise">
             <h2 class="photo-card__title">Lake Louise</h2>
-            <button class="photo-card__heart"></button>
+            <button aria-label="Like" class="photo-card__heart"></button>
           </li>
-          <li class="photo-card__item">
+          <li class="photo-card">
             <img class="photo-card__image" src="images/bald_mountains.jpg" alt="Bald Mountains">
             <h2 class="photo-card__title">Bald Mountains</h2>
-            <button class="photo-card__heart"></button>
+            <button aria-label="Like" class="photo-card__heart"></button>
           </li>
-          <li class="photo-card__item">
+          <li class="photo-card">
             <img class="photo-card__image" src="images/latemar.jpg" alt="Latemar">
             <h2 class="photo-card__title">Latemar</h2>
-            <button class="photo-card__heart"></button>
+            <button aria-label="Like" class="photo-card__heart"></button>
           </li>
-          <li class="photo-card__item">
+          <li class="photo-card">
             <img class="photo-card__image" src="images/vanoise_park.jpg" alt="Vanoise National Park">
             <h2 class="photo-card__title">Vanoise National Park</h2>
-            <button class="photo-card__heart"></button>
+            <button aria-label="Like" class="photo-card__heart"></button>
           </li>
-          <li class="photo-card__item">
+          <li class="photo-card">
             <img class="photo-card__image" src="images/lago_di_braies.jpg" alt="Lago di Braies">
             <h2 class="photo-card__title">Lago di Braies</h2>
-            <button class="photo-card__heart"></button>
+            <button aria-label="Like" class="photo-card__heart"></button>
           </li>
         </ul>
       </section>
@@ -65,17 +65,17 @@
     </footer>
   </div>
 
-  <section class="popup">
+  <div class="popup">
     <div class="popup__container">
       <h3 class="popup__title">Edit profile</h3>
-      <button class="popup__close"></button>
+      <button aria-label="Close" class="popup__close"></button>
       <form class="form__profile-edit">
         <input type="text" class="form__input form__input_type_name" value="Jacques Cousteau" placeholder="Name">
         <input type="text" class="form__input form__input_type_description" value="Explorer" placeholder="About me">
         <button type="submit" class="form__submit">Save</button>
       </form>
     </div>
-  </section>
+  </div>
 
   <script src="scripts/index.js"></script>
 </body>

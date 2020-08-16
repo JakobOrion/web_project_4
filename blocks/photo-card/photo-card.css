@@ -1,5 +1,10 @@
-@import url('./__group/photo-card__group.css');
-@import url('./__item/photo-card__item.css');
-@import url('./__image/photo-card__image.css');
 @import url('./__title/photo-card__title.css');
 @import url('./__heart/photo-card__heart.css');
+
+.photo-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}

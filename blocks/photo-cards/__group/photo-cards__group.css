@@ -1,4 +1,4 @@
-.photo-card__group {
+.photo-cards__group {
   display: grid;
   grid-template-columns: repeat(auto-fit, 282px);
   grid-template-rows: auto;
