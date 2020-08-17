@@ -1,5 +1,5 @@
 .profile__name {
-  display: inline;
+  display: inline-flex;
   color: #fff;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-style: normal;
@@ -12,10 +12,10 @@
 
 @media screen and (max-width: 619px) {
   .profile__name {
-    display: block;
     font-size: 22px;
     text-align: center;
     line-height: 32px;
     margin-bottom: 8px;
+    padding-left: 33px;
   }
 }

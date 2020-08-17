@@ -1,12 +1,9 @@
 .profile__edit {
   padding: 0;
-  margin: 0;
+  margin: 0 0 0 27px;
   display: inline-flex;
   width: 24px;
   height: 24px;
-  position: relative;
-  top: 0px;
-  right: -27px;
   background-color: #000;
   background-image: url('../../../images/edit.svg');
   background-position: center;
@@ -27,8 +24,7 @@
     width: 18px;
     height: 18px;
     background-size: 7px;
-    position: absolute;
-    top: 7px;
-    right: -33px;
+    margin-left: 12px;
+    margin-bottom: -1px;
   }
 }
