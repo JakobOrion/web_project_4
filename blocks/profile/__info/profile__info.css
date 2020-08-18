@@ -2,19 +2,19 @@
   flex-grow: 2;
   margin: -3px 30px 0;
   max-width: 552px;
-  overflow-wrap: break-word;
 }
 
 @media screen and (max-width: 919px) {
   .profile__info {
     flex-grow: unset;
-    max-width: unset;
-    margin: -3px 30px 36px;
+    margin: 0 0 0 30px;
   }
 }
 
-@media screen and (max-width: 619px) {
+@media screen and (max-width: 636px) {
   .profile__info {
-    margin: 27px auto 33px;
+    margin: 27px auto 0;
+    max-width: 100%;
+    text-align: center;
   }
 }

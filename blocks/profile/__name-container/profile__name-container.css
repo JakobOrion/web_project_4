@@ -1,0 +1,4 @@
+.profile__name-container {
+  display: inline-flex;
+  max-width: calc(100% - 34px);
+}

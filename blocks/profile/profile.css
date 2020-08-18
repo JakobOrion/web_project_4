@@ -1,6 +1,7 @@
 @import url('./__avatar/profile__avatar.css');
 @import url('./__info/profile__info.css');
-@import url('./__name/profile__name.css');
+@import url('./__name-container/profile__name-container.css');
+@import url('./__name-text/profile__name-text.css');
 @import url('./__description/profile__description.css');
 @import url('./__edit/profile__edit.css');
 @import url('./__add/profile__add.css');
@@ -21,7 +22,7 @@
   }
 }
 
-@media screen and (max-width: 619px) {
+@media screen and (max-width: 636px) {
   .profile {
     margin: 0 0 36px;
     flex-direction: column;

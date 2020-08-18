@@ -4,7 +4,7 @@ const popup = document.querySelector('.popup');
 const form = document.querySelector('.form__profile-edit');
 const nameInput = document.querySelector('.form__input_type_name');
 const descriptionInput = document.querySelector('.form__input_type_description');
-const profileName = document.querySelector('.profile__name');
+const profileName = document.querySelector('.profile__name-text');
 const profileDescription = document.querySelector('.profile__description');
 
 function togglePopup() {
