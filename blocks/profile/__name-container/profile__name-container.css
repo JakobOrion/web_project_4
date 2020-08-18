@@ -2,3 +2,9 @@
   display: inline-flex;
   max-width: calc(100% - 34px);
 }
+
+@media screen and (max-width: 636px) {
+  .profile__name-container {
+    max-width: 80%;
+  }
+}
