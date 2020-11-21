@@ -1,10 +1,10 @@
-# Project 4
+# Project 5
 
 **by Jakob Pfefferkorn**
 
 ### Around The U.S.
 
-The "Around The U.S." project will produce an interactive page over several sprints where users can add, remove, or like photos.
+Continuing to build functionality on the interactive "Around The U.S." page started in Project 4. Spanning several sprints, the page provides an interface where users can add, remove, or like photos. Project 5 adds another modal form to add new photos to the page, as well as the ability to like, delete, as well as display a larger view of the photos.
 
 ### Functionality and Technologies demonstrated
 
@@ -16,7 +16,7 @@ The "Around The U.S." project will produce an interactive page over several spri
 * CSS Grid
 * Flexbox
 * Responsive/adaptive design
-* Modal popup with form
+* Modal popups with forms
 * Interactivity via JavaScript
 
 ### View Site
