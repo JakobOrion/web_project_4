@@ -27,48 +27,7 @@
 
       <section class="photo-cards">
         <ul class="photo-cards__group">
-          <li class="photo-card">
-            <img class="photo-card__image" src="images/yosemite_valley.jpg" alt="Yosemite Valley">
-            <div class="photo-card__info">
-              <h2 class="photo-card__title">Yosemite Valley</h2>
-              <button type="button" aria-label="Like" class="photo-card__heart"></button>
-            </div>
-          </li>
-          <li class="photo-card">
-            <img class="photo-card__image" src="images/lake_louise.jpg" alt="Lake Louise">
-            <div class="photo-card__info">
-              <h2 class="photo-card__title">Lake Louise</h2>
-              <button type="button" aria-label="Like" class="photo-card__heart"></button>
-            </div>
-          </li>
-          <li class="photo-card">
-            <img class="photo-card__image" src="images/bald_mountains.jpg" alt="Bald Mountains">
-            <div class="photo-card__info">
-              <h2 class="photo-card__title">Bald Mountains</h2>
-              <button type="button" aria-label="Like" class="photo-card__heart"></button>
-            </div>
-          </li>
-          <li class="photo-card">
-            <img class="photo-card__image" src="images/latemar.jpg" alt="Latemar">
-            <div class="photo-card__info">
-              <h2 class="photo-card__title">Latemar</h2>
-              <button type="button" aria-label="Like" class="photo-card__heart"></button>
-            </div>
-          </li>
-          <li class="photo-card">
-            <img class="photo-card__image" src="images/vanoise_park.jpg" alt="Vanoise National Park">
-            <div class="photo-card__info">
-              <h2 class="photo-card__title">Vanoise National Park</h2>
-              <button type="button" aria-label="Like" class="photo-card__heart"></button>
-            </div>
-          </li>
-          <li class="photo-card">
-            <img class="photo-card__image" src="images/lago_di_braies.jpg" alt="Lago di Braies">
-            <div class="photo-card__info">
-              <h2 class="photo-card__title">Lago di Braies</h2>
-              <button type="button" aria-label="Like" class="photo-card__heart"></button>
-            </div>
-          </li>
+
         </ul>
       </section>
 
@@ -90,6 +49,17 @@
       </form>
     </div>
   </div>
+
+  <template class="photo-card-template">
+    <li class="photo-card">
+      <button type="button" aria-label="Delete" class="photo-card__delete-button"></button>
+      <img class="photo-card__image" src="images/yosemite_valley.jpg" alt="Yosemite Valley">
+      <div class="photo-card__info">
+        <h2 class="photo-card__title">Yosemite Valley</h2>
+        <button type="button" aria-label="Like" class="photo-card__heart"></button>
+      </div>
+    </li>
+  </template>
 
   <script src="scripts/index.js"></script>
 </body>

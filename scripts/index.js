@@ -30,3 +30,64 @@ editProfileButton.addEventListener('click', togglePopup)
 closeEditProfileButton.addEventListener('click', togglePopup)
 
 form.addEventListener('submit', profileSubmit)
+
+
+const initialCards = [
+  {
+    name: "Yosemite Valley",
+    link: "https://code.s3.yandex.net/web-code/yosemite.jpg"
+  },
+  {
+    name: "Lake Louise",
+    link: "https://code.s3.yandex.net/web-code/lake-louise.jpg"
+  },
+  {
+    name: "Bald Mountains",
+    link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg"
+  },
+  {
+    name: "Latemar",
+    link: "https://code.s3.yandex.net/web-code/latemar.jpg"
+  },
+  {
+    name: "Vanoise National Park",
+    link: "https://code.s3.yandex.net/web-code/vanoise.jpg"
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://code.s3.yandex.net/web-code/lago.jpg"
+  }
+];
+
+const cardTemplate = document.querySelector('.photo-card-template').content.querySelector('.photo-card');
+const list = document.querySelector('.photo-cards__group');
+
+initialCards.forEach(data => {
+
+  const cardElement = cardTemplate.cloneNode(true);
+
+
+
+  const cardImage = cardElement.querySelector('.photo-card__image');
+  const cardTitle = cardElement.querySelector('.photo-card__title');
+  const cardLikeButton = cardElement.querySelector('.photo-card__heart');
+  const cardDeleteButton = cardElement.querySelector('.photo-card__delete-button');
+
+  cardTitle.textContent = data.name;
+  cardImage.src = data.link;
+  cardImage.alt = data.name;
+
+  cardLikeButton.addEventListener('click', () => {
+
+  })
+
+  cardDeleteButton.addEventListener('click', () => {
+
+  })
+
+  cardImage.addEventListener('click', () => {
+
+  })
+
+  list.prepend(cardElement);
+})
