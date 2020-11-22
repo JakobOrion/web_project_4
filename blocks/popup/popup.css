@@ -1,4 +1,5 @@
 @import url('./__container/popup__container.css');
+@import url('./__container/_figure/popup__container_figure.css');
 @import url('./__close/popup__close.css');
 @import url('./__title/popup__title.css');
 

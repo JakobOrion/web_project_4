@@ -1,0 +1,10 @@
+.popup__container_figure {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  max-width: 75vw;
+  max-height: 75vh;
+  border-radius: unset;
+  color: #fff;
+}
