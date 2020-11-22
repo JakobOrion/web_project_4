@@ -104,15 +104,16 @@ initialCards.forEach(data => {
   })
 
   cardDeleteButton.addEventListener('click', () => {
-
-  })
+    const listItem = cardDeleteButton.closest(".photo-card");
+    listItem.remove();
+  });
 
   cardImage.addEventListener('click', () => {
     togglePopup(imagePopup);
   });
 
-  list.prepend(cardElement);
-})
+  list.append(cardElement);
+});
 
 closeImageButton.addEventListener('click', () => {
   togglePopup(imagePopup);
