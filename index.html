@@ -38,7 +38,7 @@
     </footer>
   </div>
 
-  <div class="popup">
+  <div class="popup popup__type_edit-profile">
     <div class="popup__container">
       <h3 class="popup__title">Edit profile</h3>
       <button type="button" aria-label="Close" class="popup__close"></button>
@@ -50,12 +50,24 @@
     </div>
   </div>
 
+  <div class="popup popup__type_add-card">
+    <div class="popup__container">
+      <h3 class="popup__title">New place</h3>
+      <button type="button" aria-label="Close" class="popup__close"></button>
+      <form class="form__add-card" name="addCard">
+        <input aria-label="Title" type="text" class="form__input form__input_type_card-title" name="newCardTitle" placeholder="Title" required>
+        <input aria-label="Image URL" type="url" class="form__input form__input_type_url" name="newCardImage" placeholder="Image link" required>
+        <button type="submit" class="form__submit">Save</button>
+      </form>
+    </div>
+  </div>
+
   <template class="photo-card-template">
     <li class="photo-card">
       <button type="button" aria-label="Delete" class="photo-card__delete-button"></button>
-      <img class="photo-card__image" src="images/yosemite_valley.jpg" alt="Yosemite Valley">
+      <img class="photo-card__image" src="" alt="">
       <div class="photo-card__info">
-        <h2 class="photo-card__title">Yosemite Valley</h2>
+        <h2 class="photo-card__title"></h2>
         <button type="button" aria-label="Like" class="photo-card__heart"></button>
       </div>
     </li>
