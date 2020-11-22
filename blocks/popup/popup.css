@@ -2,6 +2,7 @@
 @import url('./__container/_figure/popup__container_figure.css');
 @import url('./__figure/popup__figure.css');
 @import url('./__image/popup__image.css');
+@import url('./__image-title/popup__image-title.css');
 @import url('./__close/popup__close.css');
 @import url('./__title/popup__title.css');
 
