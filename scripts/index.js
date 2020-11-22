@@ -111,6 +111,12 @@ initialCards.forEach(data => {
   });
 
   cardImage.addEventListener('click', () => {
+    const popupPhoto = imagePopup.querySelector('.popup__image');
+    const popupPhotoTitle = imagePopup.querySelector('.popup__image-title');
+
+    popupPhoto.src = data.link;
+    popupPhotoTitle.textContent = data.name;
+
     togglePopup(imagePopup);
   });
 
