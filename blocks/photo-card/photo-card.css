@@ -1,3 +1,5 @@
+@import url('./__delete-button/photo-card__delete-button.css');
+@import url('./__image/photo-card__image.css');
 @import url('./__info/photo-card__info.css');
 @import url('./__title/photo-card__title.css');
 @import url('./__heart/photo-card__heart.css');
