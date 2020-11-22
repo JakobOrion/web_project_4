@@ -1,24 +1,59 @@
-// Popups
+// Popup wrappers
+const editProfilePopup = document.querySelector('.popup_type_edit-profile');
+const addCardPopup = document.querySelector('.popup_type_add-card');
+const imagePopup = document.querySelector('.popup_type_image');
+
+// Open buttons
+const editProfileButton = document.querySelector('.profile__edit');
+const addCardButton = document.querySelector('.profile__add');
+
+// Close buttons
+const closeEditProfileButton = editProfilePopup.querySelector('.popup__close');
+const closeAddCardButton = addCardPopup.querySelector('.popup__close');
+const closeImageButton = imagePopup.querySelector('.popup__close');
+
+// Edit form
 const form = document.querySelector('.form__profile-edit');
 
-const editProfilePopup = document.querySelector('.popup__type_edit-profile');
-const addCardPopup = document.querySelector('.popup__type_add-card');
-
-
-// Buttons
-const editProfileButton = document.querySelector('.profile__edit');
-const closeEditProfileButton = editProfilePopup.querySelector('.popup__close');
-
-const addCardButton = document.querySelector('.profile__add');
-const closeAddCardButton = addCardPopup.querySelector('.popup__close');
-
-// Profile
+// Profile elements
 const profileName = document.querySelector('.profile__name-text');
 const profileDescription = document.querySelector('.profile__description');
 
 // Form inputs
 const nameInput = document.querySelector('.form__input_type_name');
 const descriptionInput = document.querySelector('.form__input_type_description');
+
+// Places photo cards
+const cardTemplate = document.querySelector('.photo-card-template').content.querySelector('.photo-card');
+const list = document.querySelector('.photo-cards__group');
+
+// Initial places
+const initialCards = [
+  {
+    name: "Yosemite Valley",
+    link: "https://code.s3.yandex.net/web-code/yosemite.jpg"
+  },
+  {
+    name: "Lake Louise",
+    link: "https://code.s3.yandex.net/web-code/lake-louise.jpg"
+  },
+  {
+    name: "Bald Mountains",
+    link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg"
+  },
+  {
+    name: "Latemar",
+    link: "https://code.s3.yandex.net/web-code/latemar.jpg"
+  },
+  {
+    name: "Vanoise National Park",
+    link: "https://code.s3.yandex.net/web-code/vanoise.jpg"
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://code.s3.yandex.net/web-code/lago.jpg"
+  }
+];
 
 
 function togglePopup(modal) {
@@ -53,43 +88,8 @@ closeAddCardButton.addEventListener('click', () => {
   togglePopup(addCardPopup);
 });
 
-
-const initialCards = [
-  {
-    name: "Yosemite Valley",
-    link: "https://code.s3.yandex.net/web-code/yosemite.jpg"
-  },
-  {
-    name: "Lake Louise",
-    link: "https://code.s3.yandex.net/web-code/lake-louise.jpg"
-  },
-  {
-    name: "Bald Mountains",
-    link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg"
-  },
-  {
-    name: "Latemar",
-    link: "https://code.s3.yandex.net/web-code/latemar.jpg"
-  },
-  {
-    name: "Vanoise National Park",
-    link: "https://code.s3.yandex.net/web-code/vanoise.jpg"
-  },
-  {
-    name: "Lago di Braies",
-    link: "https://code.s3.yandex.net/web-code/lago.jpg"
-  }
-];
-
-const cardTemplate = document.querySelector('.photo-card-template').content.querySelector('.photo-card');
-const list = document.querySelector('.photo-cards__group');
-
 initialCards.forEach(data => {
-
   const cardElement = cardTemplate.cloneNode(true);
-
-
-
   const cardImage = cardElement.querySelector('.photo-card__image');
   const cardTitle = cardElement.querySelector('.photo-card__title');
   const cardLikeButton = cardElement.querySelector('.photo-card__heart');
@@ -108,8 +108,12 @@ initialCards.forEach(data => {
   })
 
   cardImage.addEventListener('click', () => {
-
-  })
+    togglePopup(imagePopup);
+  });
 
   list.prepend(cardElement);
 })
+
+closeImageButton.addEventListener('click', () => {
+  togglePopup(imagePopup);
+});
