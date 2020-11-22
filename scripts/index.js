@@ -1,15 +1,15 @@
 // Popup wrappers
-const editProfilePopup = document.querySelector('.popup_type_edit-profile');
-const addCardPopup = document.querySelector('.popup_type_add-card');
+const profileInfoPopup = document.querySelector('.popup_type_edit-profile');
+const newCardPopup = document.querySelector('.popup_type_add-card');
 const imagePopup = document.querySelector('.popup_type_image');
 
 // Open buttons
-const editProfileButton = document.querySelector('.profile__edit');
-const addCardButton = document.querySelector('.profile__add');
+const profileButton = document.querySelector('.profile__edit');
+const newCardButton = document.querySelector('.profile__add');
 
 // Close buttons
-const closeEditProfileButton = editProfilePopup.querySelector('.popup__close');
-const closeAddCardButton = addCardPopup.querySelector('.popup__close');
+const closeProfileButton = profileInfoPopup.querySelector('.popup__close');
+const closeAddCardButton = newCardPopup.querySelector('.popup__close');
 const closeImageButton = imagePopup.querySelector('.popup__close');
 
 // Edit form
@@ -60,32 +60,32 @@ function togglePopup(modal) {
   modal.classList.toggle('popup_opened');
 }
 
-function profileSubmit(e) {
+function submitProfileInfo(e) {
   e.preventDefault();
   profileName.textContent = nameInput.value;
   profileDescription.textContent = descriptionInput.value;
-  togglePopup(editProfilePopup);
+  togglePopup(profileInfoPopup);
 }
 
-form.addEventListener('submit', profileSubmit);
-editProfileButton.addEventListener('click', () => {
-  if (editProfilePopup.classList.contains('popup_opened')) {
+form.addEventListener('submit', submitProfileInfo);
+profileButton.addEventListener('click', () => {
+  if (profileInfoPopup.classList.contains('popup_opened')) {
     nameInput.value = profileName.textContent;
     descriptionInput.value = profileDescription.textContent;
   }
-  togglePopup(editProfilePopup);
+  togglePopup(profileInfoPopup);
 });
 
-closeEditProfileButton.addEventListener('click', () => {
-  togglePopup(editProfilePopup);
+closeProfileButton.addEventListener('click', () => {
+  togglePopup(profileInfoPopup);
 });
 
-addCardButton.addEventListener('click', () => {
-  togglePopup(addCardPopup);
+newCardButton.addEventListener('click', () => {
+  togglePopup(newCardPopup);
 });
 
 closeAddCardButton.addEventListener('click', () => {
-  togglePopup(addCardPopup);
+  togglePopup(newCardPopup);
 });
 
 initialCards.forEach(data => {
