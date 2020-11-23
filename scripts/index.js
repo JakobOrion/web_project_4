@@ -40,6 +40,12 @@ initialCards.forEach((data) => {
   list.append(startingCards);
 });
 
+function clickLikeButton(evt) {
+  if (evt.target.classList.contains("photo-card__heart")) {
+    evt.target.classList.toggle("photo-card__heart_active");
+  }
+}
+
 // Add cards
 function addCard(name, link) {
   const cardElement = cardTemplate.cloneNode(true);
@@ -52,11 +58,7 @@ function addCard(name, link) {
   cardImage.src = link;
   cardImage.alt = name;
 
-  cardLikeButton.addEventListener('click', (evt) => {
-    if (evt.target.classList.contains("photo-card__heart")) {
-      evt.target.classList.toggle("photo-card__heart_active");
-    }
-  });
+  cardLikeButton.addEventListener('click', clickLikeButton);
 
   cardDeleteButton.addEventListener('click', () => {
     const listItem = cardDeleteButton.closest(".photo-card");
