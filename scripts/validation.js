@@ -1,18 +1,22 @@
 function showErrorMessage(input, form, {errorClass, inputErrorClass, ...rest}) {
-  const error = document.querySelector('#' + input.id + '-error');
-  error.textContent = input.validationMessage;
+  const error = input.nextElementSibling;
+  if (error.classList.contains('form__error')) {
+    error.textContent = input.validationMessage;
 
-  error.classList.add(errorClass);
-  input.classList.add(inputErrorClass);
+    error.classList.add(errorClass);
+    input.classList.add(inputErrorClass);
+  }
 }
 
 
 function hideErrorMessage(input, form, {errorClass, inputErrorClass, ...rest}) {
-  const error = document.querySelector('#' + input.id + '-error');
-  error.textContent = '';
+  const error = input.nextElementSibling;
+  if (error.classList.contains('form__error')) {
+    error.textContent = '';
 
-  error.classList.remove(errorClass);
-  input.classList.remove(inputErrorClass);
+    error.classList.remove(errorClass);
+    input.classList.remove(inputErrorClass);
+  }
 }
 
 function checkInputValidity(input, form, rest) {
