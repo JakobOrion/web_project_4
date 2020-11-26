@@ -79,6 +79,8 @@ function addCard(name, link) {
 // Popup toggle
 function togglePopup(modal) {
   modal.classList.toggle('popup_opened');
+  window.addEventListener('keydown', closePopups);
+  window.addEventListener('click', closePopups);
 }
 
 // Close popups
@@ -86,11 +88,10 @@ function closePopups(evt) {
   const currentPopup = document.querySelector('.popup_opened');
   if (evt.key === 'Escape' || evt.target.classList.contains('popup_opened')) {
     togglePopup(currentPopup);
+    window.removeEventListener('keydown', closePopups);
+    window.removeEventListener('click', closePopups);
   }
 }
-
-window.addEventListener('keydown', closePopups);
-window.addEventListener('click', closePopups);
 
 // Button listeners
 closeProfileButton.addEventListener('click', () => {
