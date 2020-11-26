@@ -8,7 +8,6 @@ function showErrorMessage(input, form, {errorClass, inputErrorClass, ...rest}) {
   }
 }
 
-
 function hideErrorMessage(input, form, {errorClass, inputErrorClass, ...rest}) {
   const error = input.nextElementSibling;
   if (error.classList.contains('form__error')) {
@@ -37,7 +36,6 @@ function toggleButtonState(inputs, button, {inactiveButtonClass, ...rest}) {
   }
 
 }
-
 
 function enableValidation({formSelector, inputSelector, submitButtonSelector, ...rest}) {
   const forms = [...document.querySelectorAll(formSelector)];
