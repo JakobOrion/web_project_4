@@ -17,6 +17,8 @@ Continuing to build functionality on the interactive "Around The U.S." page star
 * Flexbox
 * Responsive/adaptive design
 * Modal popups with forms
+* Popups close with escape keypress
+* Popups close when clicking on overlay
 * Interactivity via JavaScript
 * Form validation
 
