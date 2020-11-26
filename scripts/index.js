@@ -41,8 +41,8 @@ initialCards.forEach((data) => {
 });
 
 function clickLikeButton(evt) {
-  if (evt.target.classList.contains("photo-card__heart")) {
-    evt.target.classList.toggle("photo-card__heart_active");
+  if (evt.target.classList.contains('photo-card__heart')) {
+    evt.target.classList.toggle('photo-card__heart_active');
   }
 }
 
@@ -61,7 +61,7 @@ function addCard(name, link) {
   cardLikeButton.addEventListener('click', clickLikeButton);
 
   cardDeleteButton.addEventListener('click', () => {
-    const listItem = cardDeleteButton.closest(".photo-card");
+    const listItem = cardDeleteButton.closest('.photo-card');
     listItem.remove();
   });
 
@@ -80,6 +80,17 @@ function addCard(name, link) {
 function togglePopup(modal) {
   modal.classList.toggle('popup_opened');
 }
+
+// Close popups
+function closePopups(evt) {
+  const currentPopup = document.querySelector('.popup_opened');
+  if (evt.key === 'Escape' || evt.target.classList.contains('popup_opened')) {
+    togglePopup(currentPopup);
+  }
+}
+
+window.addEventListener('keydown', closePopups);
+window.addEventListener('click', closePopups);
 
 // Button listeners
 closeProfileButton.addEventListener('click', () => {
