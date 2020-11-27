@@ -70,44 +70,56 @@ function addCard(name, link) {
     popupPhoto.src = link;
     popupPhotoTitle.textContent = name;
 
-    togglePopup(imagePopup);
+    openPopup(imagePopup);
   });
 
     return cardElement;
 };
 
-// Popup toggle
-function togglePopup(modal) {
-  modal.classList.toggle('popup_opened');
-  window.addEventListener('keydown', closePopups);
-  window.addEventListener('click', closePopups);
+// Open popup
+function openPopup(modal) {
+  modal.classList.add('popup_opened');
+  window.addEventListener('keydown', handleESC);
+  modal.addEventListener('click', handleOverlayClick);
 }
 
-// Close popups
-function closePopups(evt) {
-  const currentPopup = document.querySelector('.popup_opened');
-  if (evt.key === 'Escape' || evt.target.classList.contains('popup_opened')) {
-    togglePopup(currentPopup);
-    window.removeEventListener('keydown', closePopups);
-    window.removeEventListener('click', closePopups);
+// Escape key to close handler
+function handleESC(evt) {
+  if (evt.key === 'Escape') {
+    closePopup();
   }
+}
+
+// Overlay click to close handler
+function handleOverlayClick(evt) {
+  if (evt.target.classList.contains('popup_opened')) {
+    closePopup();
+  }
+}
+
+// Close popup
+function closePopup() {
+  const currentPopup = document.querySelector('.popup_opened');
+  currentPopup.classList.remove('popup_opened');
+  window.removeEventListener('keydown', handleESC);
+  currentPopup.removeEventListener('click', handleOverlayClick);
 }
 
 // Button listeners
 closeProfileButton.addEventListener('click', () => {
-  togglePopup(profileInfoPopup);
+  closePopup();
 });
 
 newCardButton.addEventListener('click', () => {
-  togglePopup(newCardPopup);
+  openPopup(newCardPopup);
 });
 
 closeAddCardButton.addEventListener('click', () => {
-  togglePopup(newCardPopup);
+  closePopup();
 });
 
 closeImageButton.addEventListener('click', () => {
-  togglePopup(imagePopup);
+  closePopup();
 });
 
 
@@ -116,7 +128,7 @@ function submitProfileInfo(e) {
   e.preventDefault();
   profileName.textContent = nameInput.value;
   profileDescription.textContent = descriptionInput.value;
-  togglePopup(profileInfoPopup);
+  closePopup();
 }
 
 profileForm.addEventListener('submit', submitProfileInfo);
@@ -125,7 +137,7 @@ profileButton.addEventListener('click', () => {
     nameInput.value = profileName.textContent;
     descriptionInput.value = profileDescription.textContent;
   }
-  togglePopup(profileInfoPopup);
+  openPopup(profileInfoPopup);
 });
 
 // Add new card
@@ -134,7 +146,7 @@ function addPlace(e) {
   const newCard = addCard(titleInput.value, imageLinkInput.value);
   list.prepend(newCard);
   newCardForm.reset();
-  togglePopup(newCardPopup);
+  closePopup();
 }
 
 newCardForm.addEventListener('submit', addPlace);
