@@ -1,7 +1,29 @@
+import FormValidator from './FormValidator.js';
+
+const defaultConfig = {
+  formSelector: '.popup__form',
+  inputSelector: '.form__input',
+  submitButtonSelector: '.form__submit',
+  inactiveButtonClass: 'form__submit_disabled',
+  inputErrorClass: 'form__input_type_error',
+  errorClass: 'form__error_visible'
+};
+
 // Popup wrappers
 const profileInfoPopup = document.querySelector('.popup_type_edit-profile');
 const newCardPopup = document.querySelector('.popup_type_add-card');
 const imagePopup = document.querySelector('.popup_type_image');
+
+// Forms
+const profileForm = document.querySelector('.form__profile-edit');
+const newCardForm = document.querySelector('.form__add-card');
+
+// Form Validation
+const editFormValidator = new FormValidator(defaultConfig, profileForm);
+const addFormValidator = new FormValidator(defaultConfig, newCardForm);
+
+editFormValidator.enableValidation();
+addFormValidator.enableValidation();
 
 // Open buttons
 const profileButton = document.querySelector('.profile__edit');
@@ -11,10 +33,6 @@ const newCardButton = document.querySelector('.profile__add');
 const closeProfileButton = profileInfoPopup.querySelector('.popup__close');
 const closeAddCardButton = newCardPopup.querySelector('.popup__close');
 const closeImageButton = imagePopup.querySelector('.popup__close');
-
-// Forms
-const profileForm = document.querySelector('.form__profile-edit');
-const newCardForm = document.querySelector('.form__add-card');
 
 // Profile elements
 const profileName = document.querySelector('.profile__name-text');
