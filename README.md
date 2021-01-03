@@ -1,10 +1,10 @@
-# Project 6
+# Project 7
 
 **by Jakob Pfefferkorn**
 
 ### Around The U.S.
 
-Continuing to build functionality on the interactive "Around The U.S." page started in Project 4. Spanning several sprints, the page provides an interface where users can add, remove, or like photos. Project 5 adds another modal form to add new photos to the page, as well as the ability to like, delete, or display a larger view of the photos. Project 6 introduces form validation and provides error messages to help users complete forms correctly.
+Continuing to build functionality on the interactive "Around The U.S." page started in Project 4. Spanning several sprints, the page provides an interface where users can add, remove, or like photos. Project 5 adds another modal form to add new photos to the page, as well as the ability to like, delete, or display a larger view of the photos. Project 6 introduces form validation and provides error messages to help users complete forms correctly. Project 7 refactors the existing code to use modular JS files and begin using classes.
 
 ### Functionality and Technologies demonstrated
 
@@ -19,8 +19,10 @@ Continuing to build functionality on the interactive "Around The U.S." page star
 * Modal popups with forms
 * Popups close with escape keypress
 * Popups close when clicking on overlay
-* Interactivity via JavaScript
+* Interactivity via JS
 * Form validation
+* Importing and exporting with modular JS files
+* JS Classes
 
 ### View Site
 
