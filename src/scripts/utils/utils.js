@@ -1,6 +1,6 @@
-import Card from './Card.js';
-import UserInfo from './UserInfo.js';
-import { editProfilePopup, addCardPopup, viewImagePopup, cardSection } from './index.js';
+import Card from '../components/Card.js';
+import UserInfo from '../components/UserInfo.js';
+import { editProfilePopup, addCardPopup, viewImagePopup, cardSection } from '../../pages/index.js';
 
 // Buttons
 export const profileButton = document.querySelector('.profile__edit');

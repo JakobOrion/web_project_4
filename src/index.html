@@ -4,17 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Around the U.S.</title>
-  <link rel="stylesheet" href="pages/index.css">
 </head>
 <body class="page">
   <div class="page__container">
     <header class="header">
-      <img class="logo" src="images/around_us_logo.svg" alt="Around the U.S. logo">
+      <img class="logo" src="./images/around_us_logo.svg" alt="Around the U.S. logo">
     </header>
 
     <main class="content">
       <section class="profile">
-        <img class="profile__avatar" src="images/avatar.jpg" alt="Profile Avatar Image">
+        <img class="profile__avatar" src="./images/avatar.jpg" alt="Profile Avatar Image">
         <div class="profile__info">
           <div class="profile__name-container">
             <h1 class="profile__name-text">Jacques Cousteau</h1>
@@ -73,7 +72,7 @@
     <div class="popup__container popup__container_figure">
       <button type="button" aria-label="Close" class="popup__close"></button>
       <figure class="popup__figure">
-        <img class="popup__image" src="" alt="">
+        <img class="popup__image">
         <figcaption class="popup__image-title"></figcaption>
       </figure>
     </div>
@@ -82,7 +81,7 @@
   <template class="photo-card-template">
     <li class="photo-card">
       <button type="button" aria-label="Delete" class="photo-card__delete-button"></button>
-      <img class="photo-card__image" src="" alt="">
+      <img class="photo-card__image">
       <div class="photo-card__info">
         <h2 class="photo-card__title"></h2>
         <button type="button" aria-label="Like" class="photo-card__heart"></button>
@@ -90,6 +89,5 @@
     </li>
   </template>
 
-  <script type="module" src="scripts/index.js"></script>
 </body>
 </html>
