@@ -1,9 +1,11 @@
-import initialCards from './initialPlaces.js';
-import { defaultConfig, allForms, submitProfileInfo, submitNewCard, createNewCard } from './utils.js';
-import FormValidator from './FormValidator.js';
-import PopupWithForm from './PopupWithForm.js';
-import PopupWithImage from './PopupWithImage.js';
-import Section from './Section.js';
+import './index.css';
+
+import initialCards from '../scripts/utils/initialPlaces.js';
+import { defaultConfig, allForms, submitProfileInfo, submitNewCard, createNewCard } from '../scripts/utils/utils.js';
+import FormValidator from '../scripts/components/FormValidator.js';
+import PopupWithForm from '../scripts/components/PopupWithForm.js';
+import PopupWithImage from '../scripts/components/PopupWithImage.js';
+import Section from '../scripts/components/Section.js';
 
 // Popups
 export const editProfilePopup = new PopupWithForm(
