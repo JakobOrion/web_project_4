@@ -1,5 +1,5 @@
 // Initial places
-export const initialCards = [
+const initialCards = [
   {
     name: "Yosemite Valley",
     link: "https://code.s3.yandex.net/web-code/yosemite.jpg"
@@ -25,3 +25,5 @@ export const initialCards = [
     link: "https://code.s3.yandex.net/web-code/lago.jpg"
   }
 ];
+
+export default initialCards;
