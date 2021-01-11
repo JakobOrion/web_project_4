@@ -1,39 +1,90 @@
-export const newCardPopup = document.querySelector('.popup_type_add-card');
-export const imagePopup = document.querySelector('.popup_type_image');
+import Card from './Card.js';
+import UserInfo from './UserInfo.js';
+import { editProfilePopup, addCardPopup, viewImagePopup, cardSection } from './index.js';
 
+// Buttons
+export const profileButton = document.querySelector('.profile__edit');
 export const newCardButton = document.querySelector('.profile__add');
 
-export const closeAddCardButton = newCardPopup.querySelector('.popup__close');
-export const closeImageButton = imagePopup.querySelector('.popup__close');
+// Button eventlisteners
+profileButton.addEventListener('click', () => {
+  showCurrentProfile();
+  editProfilePopup.open();
+});
 
-export const popupPhoto = imagePopup.querySelector('.popup__image');
-export const popupPhotoTitle = imagePopup.querySelector('.popup__image-title');
+newCardButton.addEventListener('click', () => {
+  addCardPopup.open();
+});
 
-// Open popup
-export function openPopup(modal) {
-  modal.classList.add('popup_opened');
-  window.addEventListener('keydown', handleESC);
-  modal.addEventListener('click', handleOverlayClick);
-}
+// Forms
+export const allForms = [...document.querySelectorAll('.popup__form')];
 
-// Escape key to close handler
-export function handleESC(evt) {
-  if (evt.key === 'Escape') {
-    closePopup();
+// Profile elements
+export const profileName = document.querySelector('.profile__name-text');
+export const profileJob = document.querySelector('.profile__description');
+
+// Profile form inputs
+export const nameInput = document.querySelector('.form__input_type_name');
+export const jobInput = document.querySelector('.form__input_type_description');
+
+// Default settings
+export const defaultConfig = {
+  formSelector: '.popup__form',
+  inputSelector: '.form__input',
+  submitButtonSelector: '.form__submit',
+  inactiveButtonClass: 'form__submit_disabled',
+  inputErrorClass: 'form__input_type_error',
+  errorClass: 'form__error_visible'
+};
+
+// User info instances
+export const user = new UserInfo(
+  {
+    name: profileName,
+    job: profileJob
   }
+);
+
+// Profile submit handler
+export function submitProfileInfo({profileName, profileAboutMe}) {
+  user.setUserInfo(
+    {
+      name: profileName,
+      job: profileAboutMe
+    }
+  );
+  editProfilePopup.close();
 }
 
-// Overlay click to close handler
-export function handleOverlayClick(evt) {
-  if (evt.target.classList.contains('popup_opened')) {
-    closePopup();
-  }
+// Get current profile info
+export function showCurrentProfile() {
+  const currentInfo = user.getUserInfo();
+  nameInput.value = currentInfo.name;
+  jobInput.value = currentInfo.job;
 }
 
-// Close popup
-export function closePopup() {
-  const currentPopup = document.querySelector('.popup_opened');
-  currentPopup.classList.remove('popup_opened');
-  window.removeEventListener('keydown', handleESC);
-  currentPopup.removeEventListener('click', handleOverlayClick);
+// New card instances
+export const createNewCard = (place) => {
+  const card = new Card(
+    {
+      data: {name: place.name, link: place.link},
+      handleCardClick: (name, link) => {
+        viewImagePopup.open(name, link)
+      }
+    },
+      '.photo-card-template'
+  )
+  return card.generateCard();
+}
+
+// New card submit handler
+export function submitNewCard({name, link}) {
+  const newCard = createNewCard(
+    {
+      name: name,
+      link: link,
+    }
+  );
+  cardSection.addItem(newCard);
+  addCardPopup.close();
 }
