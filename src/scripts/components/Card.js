@@ -19,10 +19,8 @@ class Card {
   }
 
   _handleLikeButton(evt) {
-    if (evt.target.classList.contains('photo-card__heart')) {
-      evt.target.classList.toggle('photo-card__heart_active');
-    }
-  }
+    evt.target.classList.toggle('photo-card__heart_active');
+}
 
   _handleDeleteCard(evt) {
     evt.target.closest('.photo-card').remove();
