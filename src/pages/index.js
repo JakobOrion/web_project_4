@@ -1,7 +1,7 @@
 import './index.css';
 
-import initialCards from '../scripts/utils/initialPlaces.js';
-import { defaultConfig, allForms, submitProfileInfo, submitNewCard, createNewCard } from '../scripts/utils/utils.js';
+import { initialCards, defaultConfig, allForms, createNewCard }  from '../scripts/utils/constants.js';
+import { submitProfileInfo, submitNewCard } from '../scripts/utils/utils.js';
 import FormValidator from '../scripts/components/FormValidator.js';
 import PopupWithForm from '../scripts/components/PopupWithForm.js';
 import PopupWithImage from '../scripts/components/PopupWithImage.js';
