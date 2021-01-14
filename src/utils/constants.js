@@ -1,6 +1,6 @@
 import Card from '../components/Card.js';
 import UserInfo from '../components/UserInfo.js';
-import { viewImagePopup } from '../../pages/index.js';
+import { viewImagePopup } from '../pages/index.js';
 
 // Initial places
 export const initialCards = [

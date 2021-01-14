@@ -1,5 +1,5 @@
 import { profileButton, newCardButton, nameInput, jobInput, user } from './constants.js';
-import { editProfilePopup, addCardPopup, cardSection } from '../../pages/index.js';
+import { editProfilePopup, addCardPopup, cardSection } from '../pages/index.js';
 
 // Button eventlisteners
 profileButton.addEventListener('click', () => {

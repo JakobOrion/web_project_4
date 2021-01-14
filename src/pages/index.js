@@ -1,11 +1,11 @@
 import './index.css';
 
-import { initialCards, defaultConfig, allForms, createNewCard }  from '../scripts/utils/constants.js';
-import { submitProfileInfo, submitNewCard } from '../scripts/utils/utils.js';
-import FormValidator from '../scripts/components/FormValidator.js';
-import PopupWithForm from '../scripts/components/PopupWithForm.js';
-import PopupWithImage from '../scripts/components/PopupWithImage.js';
-import Section from '../scripts/components/Section.js';
+import { initialCards, defaultConfig, allForms, createNewCard }  from '../utils/constants.js';
+import { submitProfileInfo, submitNewCard } from '../utils/utils.js';
+import FormValidator from '../components/FormValidator.js';
+import PopupWithForm from '../components/PopupWithForm.js';
+import PopupWithImage from '../components/PopupWithImage.js';
+import Section from '../components/Section.js';
 
 // Popups
 export const editProfilePopup = new PopupWithForm(
