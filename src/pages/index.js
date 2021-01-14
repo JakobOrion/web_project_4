@@ -1,6 +1,6 @@
 import './index.css';
 
-import { newCardButton, defaultConfig, allForms, createNewCard }  from '../utils/constants.js';
+import { newCardButton, defaultConfig, allForms, createNewCard, user }  from '../utils/constants.js';
 import { submitProfileInfo } from '../utils/utils.js';
 import FormValidator from '../components/FormValidator.js';
 import PopupWithForm from '../components/PopupWithForm.js';
@@ -53,7 +53,13 @@ api.getCardList()
       addCardPopup.open();
     });
   })
-  .then(res => {console.log(res);})
+  .catch(err => {console.log(err);})
+
+// Load profile info
+api.getUserInfo()
+  .then(res => {
+    user.setUserInfo(res)
+  })
   .catch(err => {console.log(err);})
 
 // Popups

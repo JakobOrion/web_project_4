@@ -5,6 +5,13 @@ class Api {
   }
 
 // load user info from server GET https://around.nomoreparties.co/v1/group-7/users/me
+getUserInfo() {
+  return fetch(this._baseUrl + '/users/me', {
+    headers: this._headers
+  })
+  .then(res => res.ok ? res.json() : Promise.reject('Error!' + res.statusText))
+  .catch(err => console.log(err))
+}
 
 // load cards from server GET https://around.nomoreparties.co/v1/group-7/cards
 getCardList() {

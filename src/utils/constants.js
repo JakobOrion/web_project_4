@@ -58,7 +58,7 @@ export const jobInput = document.querySelector('.form__input_type_description');
 export const user = new UserInfo(
   {
     name: profileName,
-    job: profileJob
+    about: profileJob
   }
 );
 

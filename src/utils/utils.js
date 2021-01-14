@@ -12,7 +12,7 @@ export function submitProfileInfo({profileName, profileAboutMe}) {
   user.setUserInfo(
     {
       name: profileName,
-      job: profileAboutMe
+      about: profileAboutMe
     }
   );
   editProfilePopup.close();
@@ -22,5 +22,5 @@ export function submitProfileInfo({profileName, profileAboutMe}) {
 export function showCurrentProfile() {
   const currentInfo = user.getUserInfo();
   nameInput.value = currentInfo.name;
-  jobInput.value = currentInfo.job;
+  jobInput.value = currentInfo.about;
 }
