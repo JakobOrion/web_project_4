@@ -32,15 +32,16 @@ export function showCurrentProfile() {
 // New card submit handler
 export function submitNewCard({name, link}) {
   api.addCard({name, link})
-  .then(res => {
-    const newCard = createNewCard(
-      {
-        name,
-        link
-      }
-    );
-    cardSection.addItem(newCard);
-    addCardPopup.close();
-  })
-  .catch(err => {console.log(err);})
+    .then((res) => {
+      const newCard = createNewCard(
+        {
+          name,
+          link,
+          _id: res._id
+        }
+      );
+      cardSection.addItem(newCard);
+      addCardPopup.close();
+    })
+    .catch(err => {console.log(err);})
 }

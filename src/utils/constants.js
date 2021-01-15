@@ -1,6 +1,6 @@
 import Card from '../components/Card.js';
 import UserInfo from '../components/UserInfo.js';
-import { viewImagePopup } from '../pages/index.js';
+import { api, viewImagePopup } from '../pages/index.js';
 
 // Initial places
 export const initialCards = [
@@ -63,12 +63,18 @@ export const user = new UserInfo(
 );
 
 // New card instances
-export const createNewCard = (place) => {
+export const createNewCard = (data) => {
   const card = new Card(
     {
-      data: {name: place.name, link: place.link},
+      data: data,
       handleCardClick: (name, link) => {
         viewImagePopup.open(name, link)
+      },
+      handleDeleteClick: (_id, cardElement) => {
+      api.removeCard(_id)
+        .then(() => {
+          cardElement.remove();
+        })
       }
     },
       '.photo-card-template'

@@ -4,7 +4,7 @@ class Api {
     this._headers = headers;
   }
 
-// load user info from server GET https://around.nomoreparties.co/v1/group-7/users/me
+// load user info from server
 getUserInfo() {
   return fetch(this._baseUrl + '/users/me', {
     headers: this._headers
@@ -13,7 +13,7 @@ getUserInfo() {
   .catch(err => console.log(err))
 }
 
-// load cards from server GET https://around.nomoreparties.co/v1/group-7/cards
+// load cards from server
 getCardList() {
   return fetch(this._baseUrl + '/cards', {
     headers: this._headers
@@ -22,12 +22,12 @@ getCardList() {
   .catch(err => console.log(err))
 }
 
-//should do the promise of and wait for the getCardList and getUserInfo then render everything, not just each part.
+//Wait for the getCardList and getUserInfo before rendering
 getAppInfo() {
-
+  return Promise.all([this.getUserInfo(), this.getCardList()])
 }
 
-// edit profile PATCH https://around.nomoreparties.co/v1/group-7/users/me
+// edit profile
 setUserInfo({ name, about }) {
   return fetch(this._baseUrl + '/users/me', {
     method: 'PATCH',
@@ -41,7 +41,7 @@ setUserInfo({ name, about }) {
   .catch(err => console.log(err))
 }
 
-// add new card POST https://around.nomoreparties.co/v1/group-7/cards
+// add new card
 addCard({ name, link }) {
   return fetch(this._baseUrl + '/cards', {
     method: 'POST',
@@ -56,12 +56,20 @@ addCard({ name, link }) {
 }
 
 
-// delete a card DELETE https://around.nomoreparties.co/v1/group-7/cards/cardId
+// delete a card
+removeCard(cardID) {
+  return fetch(this._baseUrl + '/cards/' + cardID, {
+    method: 'DELETE',
+    headers: this._headers
+  })
+  .then(res => res.ok ? res.json() : Promise.reject('Error!' + res.statusText))
+  .catch(err => console.log(err))
+}
 
 // add like PUT https://around.nomoreparties.co/v1/group-7/cards/likes/cardId
-// remove like  DELETE https://around.nomoreparties.co/v1/groupId/cards/likes/cardId
+// remove like  DELETE https://around.nomoreparties.co/v1/group-7/cards/likes/cardId
 
-// update profile pic PATCH https://around.nomoreparties.co/v1/groupId/users/me/avatar
+// update profile pic PATCH https://around.nomoreparties.co/v1/group-7/users/me/avatar
 }
 
 export default Api;

@@ -17,7 +17,7 @@ export const api = new Api({
   }
 });
 
-// Load initial places
+// Load places
 export const cardSection = new Section(
   {renderer: createNewCard},
   '.photo-cards__group');
@@ -28,17 +28,11 @@ export const addCardPopup = new PopupWithForm(
 );
 addCardPopup.setEventListeners();
 
-// Load cards
-api.getCardList()
-  .then(res => {
-    cardSection.renderItems(res);
-  })
-  .catch(err => {console.log(err);})
-
-// Load profile info
-api.getUserInfo()
-  .then(res => {
-    user.setUserInfo(res)
+// Load profile info and cards
+api.getAppInfo()
+  .then(([userInfo, cardList]) => {
+    user.setUserInfo(userInfo)
+    cardSection.renderItems(cardList)
   })
   .catch(err => {console.log(err);})
 
