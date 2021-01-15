@@ -1,5 +1,5 @@
-import { profileButton, newCardButton, nameInput, jobInput, user } from './constants.js';
-import { editProfilePopup, addCardPopup, cardSection } from '../pages/index.js';
+import { profileButton, newCardButton, createNewCard, nameInput, jobInput, user } from './constants.js';
+import { editProfilePopup, addCardPopup, cardSection, api } from '../pages/index.js';
 
 // Button eventlisteners
 profileButton.addEventListener('click', () => {
@@ -16,7 +16,7 @@ export function submitProfileInfo({profileName, profileAboutMe}) {
   user.setUserInfo(
     {
       name: profileName,
-      job: profileAboutMe
+      about: profileAboutMe
     }
   );
   editProfilePopup.close();
@@ -26,17 +26,22 @@ export function submitProfileInfo({profileName, profileAboutMe}) {
 export function showCurrentProfile() {
   const currentInfo = user.getUserInfo();
   nameInput.value = currentInfo.name;
-  jobInput.value = currentInfo.job;
+  jobInput.value = currentInfo.about;
 }
 
 // New card submit handler
 export function submitNewCard({name, link}) {
-  const newCard = createNewCard(
-    {
-      name: name,
-      link: link,
-    }
-  );
-  cardSection.addItem(newCard);
-  addCardPopup.close();
+  api.addCard({name, link})
+    .then((res) => {
+      const newCard = createNewCard(
+        {
+          name,
+          link,
+          _id: res._id
+        }
+      );
+      cardSection.addItem(newCard);
+      addCardPopup.close();
+    })
+    .catch(err => {console.log(err);})
 }

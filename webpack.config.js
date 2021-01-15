@@ -14,6 +14,7 @@ module.exports = {
     publicPath: ""
   },
   mode: "development",
+  devtool: 'cheap-module-source-map',
   devServer: {
     contentBase: path.resolve(__dirname, "./dist"),
     compress: true,

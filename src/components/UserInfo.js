@@ -1,19 +1,19 @@
 class UserInfo {
-  constructor({name, job}) {
+  constructor({name, about}) {
     this._profileName = name;
-    this._profileJob = job;
+    this._profileJob = about;
   }
 
   getUserInfo() {
     return {
       name: this._profileName.textContent,
-      job: this._profileJob.textContent
+      about: this._profileJob.textContent
     }
   }
 
   setUserInfo(userData) {
     this._profileName.textContent = userData.name;
-    this._profileJob.textContent = userData.job;
+    this._profileJob.textContent = userData.about;
   }
 }
 
