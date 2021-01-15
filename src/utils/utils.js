@@ -1,5 +1,5 @@
 import { profileButton, newCardButton, createNewCard, nameInput, jobInput, user } from './constants.js';
-import { editProfilePopup, addCardPopup, cardSection } from '../pages/index.js';
+import { editProfilePopup, addCardPopup, cardSection, api } from '../pages/index.js';
 
 // Button eventlisteners
 profileButton.addEventListener('click', () => {
@@ -31,12 +31,16 @@ export function showCurrentProfile() {
 
 // New card submit handler
 export function submitNewCard({name, link}) {
-  const newCard = createNewCard(
-    {
-      name: name,
-      link: link,
-    }
-  );
-  cardSection.addItem(newCard);
-  addCardPopup.close();
+  api.addCard({name, link})
+  .then(res => {
+    const newCard = createNewCard(
+      {
+        name,
+        link
+      }
+    );
+    cardSection.addItem(newCard);
+    addCardPopup.close();
+  })
+  .catch(err => {console.log(err);})
 }

@@ -22,6 +22,11 @@ getCardList() {
   .catch(err => console.log(err))
 }
 
+//should do the promise of and wait for the getCardList and getUserInfo then render everything, not just each part.
+getAppInfo() {
+
+}
+
 // edit profile PATCH https://around.nomoreparties.co/v1/group-7/users/me
 setUserInfo({ name, about }) {
   return fetch(this._baseUrl + '/users/me', {
@@ -37,6 +42,19 @@ setUserInfo({ name, about }) {
 }
 
 // add new card POST https://around.nomoreparties.co/v1/group-7/cards
+addCard({ name, link }) {
+  return fetch(this._baseUrl + '/cards', {
+    method: 'POST',
+    headers: this._headers,
+    body: JSON.stringify({
+      name,
+      link
+    })
+  })
+  .then(res => res.ok ? res.json() : Promise.reject('Error!' + res.statusText))
+  .catch(err => console.log(err))
+}
+
 
 // delete a card DELETE https://around.nomoreparties.co/v1/group-7/cards/cardId
 

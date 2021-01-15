@@ -9,7 +9,7 @@ import Section from '../components/Section.js';
 import Api from '../components/Api.js';
 
 // API instance
-const api = new Api({
+export const api = new Api({
   baseUrl: "https://around.nomoreparties.co/v1/group-7",
   headers: {
     authorization: "7c54637c-526f-4047-8439-3339585d598e",
