@@ -1,7 +1,7 @@
 import './index.css';
 
-import { newCardButton, defaultConfig, allForms, createNewCard, user }  from '../utils/constants.js';
-import { submitProfileInfo } from '../utils/utils.js';
+import { defaultConfig, allForms, createNewCard, user }  from '../utils/constants.js';
+import { submitProfileInfo, submitNewCard } from '../utils/utils.js';
 import FormValidator from '../components/FormValidator.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import PopupWithImage from '../components/PopupWithImage.js';
@@ -17,41 +17,21 @@ const api = new Api({
   }
 });
 
-// Cards setup
+// Load initial places
+export const cardSection = new Section(
+  {renderer: createNewCard},
+  '.photo-cards__group');
+
+export const addCardPopup = new PopupWithForm(
+  '.popup_type_add-card',
+  submitNewCard
+);
+addCardPopup.setEventListeners();
+
+// Load cards
 api.getCardList()
   .then(res => {
-    // Load initial places
-    const cardSection = new Section(
-      {
-        items: res,
-        renderer: createNewCard
-      },
-      '.photo-cards__group'
-      );
-
-    cardSection.renderItems();
-
-    const addCardPopup = new PopupWithForm(
-      '.popup_type_add-card',
-      submitNewCard
-    );
-    addCardPopup.setEventListeners();
-
-    // New card submit handler
-    function submitNewCard({name, link}) {
-      const newCard = createNewCard(
-        {
-          name: name,
-          link: link,
-        }
-      );
-      cardSection.addItem(newCard);
-      addCardPopup.close();
-    }
-
-    newCardButton.addEventListener('click', () => {
-      addCardPopup.open();
-    });
+    cardSection.renderItems(res);
   })
   .catch(err => {console.log(err);})
 
