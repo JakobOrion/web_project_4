@@ -40,6 +40,7 @@ export const defaultConfig = {
   errorClass: 'form__error_visible'
 };
 // Buttons
+export const avatarButton = document.querySelector('.profile__avatar-edit');
 export const profileButton = document.querySelector('.profile__edit');
 export const newCardButton = document.querySelector('.profile__add');
 
@@ -47,6 +48,7 @@ export const newCardButton = document.querySelector('.profile__add');
 export const allForms = [...document.querySelectorAll('.popup__form')];
 
 // Profile elements
+export const profileAvatar = document.querySelector('.profile__avatar');
 export const profileName = document.querySelector('.profile__name-text');
 export const profileJob = document.querySelector('.profile__description');
 
@@ -58,7 +60,8 @@ export const jobInput = document.querySelector('.form__input_type_description');
 export const user = new UserInfo(
   {
     name: profileName,
-    about: profileJob
+    about: profileJob,
+    avatar: profileAvatar
   }
 );
 

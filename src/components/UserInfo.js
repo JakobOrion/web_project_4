@@ -1,7 +1,8 @@
 class UserInfo {
-  constructor({name, about}) {
+  constructor({name, about, avatar}) {
     this._profileName = name;
     this._profileJob = about;
+    this._profileAvatar = avatar;
   }
 
   getUserInfo() {
@@ -11,9 +12,14 @@ class UserInfo {
     }
   }
 
-  setUserInfo(userData) {
-    this._profileName.textContent = userData.name;
-    this._profileJob.textContent = userData.about;
+  setUserInfo({name, about}) {
+    this._profileName.textContent = name;
+    this._profileJob.textContent = about;
+    this._profileAvatar.alt = `${name}'s Profile Picture`;
+  }
+
+  setUserAvatar({avatar}) {
+    this._profileAvatar.src = avatar;
   }
 }
 

@@ -97,7 +97,6 @@ setProfilePicture({ avatar }) {
   .then(res => res.ok ? res.json() : Promise.reject('Error!' + res.statusText))
   .catch(err => console.log(err))
 }
-
 }
 
 export default Api;

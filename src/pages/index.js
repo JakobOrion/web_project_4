@@ -1,7 +1,7 @@
 import './index.css';
 
 import { defaultConfig, allForms, createNewCard, user }  from '../utils/constants.js';
-import { submitProfileInfo, submitNewCard } from '../utils/utils.js';
+import { submitProfileInfo, submitNewCard, submitAvatar } from '../utils/utils.js';
 import FormValidator from '../components/FormValidator.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import PopupWithImage from '../components/PopupWithImage.js';
@@ -22,26 +22,33 @@ export const cardSection = new Section(
   {renderer: createNewCard},
   '.photo-cards__group');
 
-export const addCardPopup = new PopupWithForm(
-  '.popup_type_add-card',
-  submitNewCard
-);
-addCardPopup.setEventListeners();
-
 // Load profile info and cards
 api.getAppInfo()
-  .then(([userInfo, cardList]) => {
-    user.setUserInfo(userInfo)
-    cardSection.renderItems(cardList)
-  })
-  .catch(err => {console.log(err);})
+.then(([userInfo, cardList]) => {
+  user.setUserInfo(userInfo)
+  user.setUserAvatar(userInfo)
+  cardSection.renderItems(cardList)
+})
+.catch(err => {console.log(err);})
 
 // Popups
+export const editAvatarPopup = new PopupWithForm(
+  '.popup_type_edit-avatar',
+  submitAvatar
+  );
+editAvatarPopup.setEventListeners();
+
 export const editProfilePopup = new PopupWithForm(
   '.popup_type_edit-profile',
   submitProfileInfo
   );
 editProfilePopup.setEventListeners();
+
+export const addCardPopup = new PopupWithForm(
+  '.popup_type_add-card',
+  submitNewCard
+);
+addCardPopup.setEventListeners();
 
 export const viewImagePopup = new PopupWithImage(
   '.popup_type_image'
