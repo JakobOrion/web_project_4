@@ -30,8 +30,15 @@ class PopupWithForm extends Popup {
     });
   }
 
+  saving(inProgress) {
+    inProgress ?
+      this._form.querySelector('.form__submit').textContent = 'Saving...' :
+      this._form.querySelector('.form__submit').textContent = this._form.querySelector('.form__submit').name
+  }
+
   close() {
     super.close();
+    this.saving(false);
     this._form.reset();
     this._clearErrors();
   }

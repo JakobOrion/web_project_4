@@ -15,8 +15,11 @@ newCardButton.addEventListener('click', () => {
   addCardPopup.open();
 });
 
+
+
 // Avatar submit handler
 export function submitAvatar({ avatar }) {
+  editAvatarPopup.saving(true);
   api.setProfilePicture({ avatar })
     .then(() => {
       user.setUserAvatar(
@@ -30,6 +33,7 @@ export function submitAvatar({ avatar }) {
 
 // Profile submit handler
 export function submitProfileInfo({ name, about }) {
+  editProfilePopup.saving(true);
   api.setUserInfo({ name, about })
     .then(() => {
       user.setUserInfo(
@@ -38,9 +42,9 @@ export function submitProfileInfo({ name, about }) {
           about
         }
       );
-      editProfilePopup.close();
     })
     .catch(err => {console.log(err);})
+    editProfilePopup.close();
 }
 
 // Get current profile info
@@ -52,6 +56,7 @@ export function showCurrentProfile() {
 
 // New card submit handler
 export function submitNewCard({ name, link }) {
+  addCardPopup.saving(true);
   api.addCard({ name, link })
     .then((res) => {
       const newCard = createNewCard(res);
