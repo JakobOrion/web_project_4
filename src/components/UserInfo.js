@@ -16,13 +16,10 @@ class UserInfo {
     return userInfo._id;
   }
 
-  setUserInfo({name, about}) {
+  setUserInfo({name, about, avatar}) {
     this._profileName.textContent = name;
     this._profileJob.textContent = about;
     this._profileAvatar.alt = `${name}'s Profile Picture`;
-  }
-
-  setUserAvatar({avatar}) {
     this._profileAvatar.src = avatar;
   }
 }

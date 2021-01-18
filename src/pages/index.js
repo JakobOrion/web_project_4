@@ -28,9 +28,8 @@ export let userIdInfo;
 // Load profile info and cards
 api.getAppInfo()
 .then(([userInfo, cardList]) => {
-  userIdInfo = user.getUserId(userInfo)
+  userIdInfo = userInfo._id
   user.setUserInfo(userInfo)
-  user.setUserAvatar(userInfo)
   cardSection.renderItems(cardList)
 })
 .catch(err => {console.log(err);})
@@ -63,8 +62,10 @@ export const deleteCardPopup = new PopupButton(
   '.popup_type_delete-card',
    ([cardId, cardElement]) => {
       api.removeCard(cardId)
-        .then(deleteCardPopup.close(),
-          cardElement.remove())
+        .then(() => {
+          deleteCardPopup.close()
+          cardElement.remove()
+        })
     }
 );
 deleteCardPopup.setEventListeners();

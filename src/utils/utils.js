@@ -18,30 +18,21 @@ newCardButton.addEventListener('click', () => {
 
 
 // Avatar submit handler
-export function submitAvatar({ avatar }) {
+export function submitAvatar(data) {
   editAvatarPopup.saving(true);
-  api.setProfilePicture({ avatar })
-    .then(() => {
-      user.setUserAvatar(
-        {
-          avatar
-        }
-      );
+  api.setProfilePicture(data)
+    .then((res) => {
+      user.setUserInfo(res);
       editAvatarPopup.close();
     })
 }
 
 // Profile submit handler
-export function submitProfileInfo({ name, about }) {
+export function submitProfileInfo(data) {
   editProfilePopup.saving(true);
-  api.setUserInfo({ name, about })
-    .then(() => {
-      user.setUserInfo(
-        {
-          name,
-          about
-        }
-      );
+  api.setUserInfo(data)
+    .then((res) => {
+      user.setUserInfo(res);
     })
     .catch(err => {console.log(err);})
     editProfilePopup.close();
