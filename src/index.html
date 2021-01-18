@@ -13,7 +13,10 @@
 
     <main class="content">
       <section class="profile">
-        <img class="profile__avatar" src="./images/avatar.jpg" alt="Profile Avatar Image">
+        <div class="profile__avatar-container">
+          <img class="profile__avatar">
+          <button type="button" aria-label="Edit Profile Picture" class="profile__avatar-edit"></button>
+        </div>
         <div class="profile__info">
           <div class="profile__name-container">
             <h1 class="profile__name-text"></h1>
@@ -36,15 +39,28 @@
     </footer>
   </div>
 
+  <div class="popup popup_type_edit-avatar">
+    <div class="popup__container">
+      <h3 class="popup__title">Change profile picture</h3>
+      <button type="button" aria-label="Close" class="popup__close"></button>
+      <form class="popup__form form__avatar-edit" name="editAvatar">
+        <input aria-label="Image URL" type="url" class="form__input form__input_type_url" name="avatar" placeholder="Image link" aria-required="true" required>
+        <span class="form__error" aria-live="polite"></span>
+
+        <button type="submit" class="form__submit">Save</button>
+      </form>
+    </div>
+  </div>
+
   <div class="popup popup_type_edit-profile">
     <div class="popup__container">
       <h3 class="popup__title">Edit profile</h3>
       <button type="button" aria-label="Close" class="popup__close"></button>
       <form class="popup__form form__profile-edit" name="editProfile">
-        <input aria-label="Name" type="text" class="form__input form__input_type_name" name="profileName" placeholder="Name" minlength="2" maxlength="40" aria-required="true" required>
+        <input aria-label="Name" type="text" class="form__input form__input_type_name" name="name" placeholder="Name" minlength="2" maxlength="40" aria-required="true" required>
         <span class="form__error"  aria-live="polite"></span>
 
-        <input aria-label="About me" type="text" class="form__input form__input_type_description" name="profileAboutMe" placeholder="About me" minlength="2" maxlength="200" aria-required="true" required>
+        <input aria-label="About me" type="text" class="form__input form__input_type_description" name="about" placeholder="About me" minlength="2" maxlength="200" aria-required="true" required>
         <span class="form__error" aria-live="polite"></span>
 
         <button type="submit" class="form__submit">Save</button>
@@ -78,13 +94,25 @@
     </div>
   </div>
 
+  <div class="popup popup_type_delete-card">
+    <div class="popup__container">
+      <h3 class="popup__title">Are you sure?</h3>
+      <button type="button" aria-label="Close" class="popup__close"></button>
+      <form class="popup__form form__delete-card" name="deleteCard">
+
+        <button type="submit" class="form__submit form__submit-delete">Yes</button>
+      </form>
+    </div>
+  </div>
+
   <template class="photo-card-template">
     <li class="photo-card">
-      <button type="button" aria-label="Delete" class="photo-card__delete-button"></button>
+      <button type="button" aria-label="Delete" class="photo-card__delete-button" hidden></button>
       <img class="photo-card__image">
       <div class="photo-card__info">
         <h2 class="photo-card__title"></h2>
         <button type="button" aria-label="Like" class="photo-card__heart"></button>
+        <div class="photo-card__likes">0</div>
       </div>
     </li>
   </template>

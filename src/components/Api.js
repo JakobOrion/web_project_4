@@ -55,7 +55,6 @@ addCard({ name, link }) {
   .catch(err => console.log(err))
 }
 
-
 // delete a card
 removeCard(cardID) {
   return fetch(this._baseUrl + '/cards/' + cardID, {
@@ -66,10 +65,38 @@ removeCard(cardID) {
   .catch(err => console.log(err))
 }
 
-// add like PUT https://around.nomoreparties.co/v1/group-7/cards/likes/cardId
-// remove like  DELETE https://around.nomoreparties.co/v1/group-7/cards/likes/cardId
+// add like
+addLike(cardID) {
+  return fetch(this._baseUrl + '/cards/likes/' + cardID, {
+    method: 'PUT',
+    headers: this._headers
+  })
+  .then(res => res.ok ? res.json() : Promise.reject('Error!' + res.statusText))
+  .catch(err => console.log(err))
+}
 
-// update profile pic PATCH https://around.nomoreparties.co/v1/group-7/users/me/avatar
+// remove like
+removeLike(cardID) {
+  return fetch(this._baseUrl + '/cards/likes/' + cardID, {
+    method: 'DELETE',
+    headers: this._headers
+  })
+  .then(res => res.ok ? res.json() : Promise.reject('Error!' + res.statusText))
+  .catch(err => console.log(err))
+}
+
+// update profile pic
+setProfilePicture({ avatar }) {
+  return fetch(this._baseUrl + '/users/me/avatar', {
+    method: 'PATCH',
+    headers: this._headers,
+    body: JSON.stringify({
+      avatar
+    })
+  })
+  .then(res => res.ok ? res.json() : Promise.reject('Error!' + res.statusText))
+  .catch(err => console.log(err))
+}
 }
 
 export default Api;

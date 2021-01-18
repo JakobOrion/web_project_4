@@ -3,6 +3,7 @@
 @import url('./__info/photo-card__info.css');
 @import url('./__title/photo-card__title.css');
 @import url('./__heart/photo-card__heart.css');
+@import url('./__likes/photo-card__likes.css');
 @import url('./__heart/_active/photo-card__heart_active.css');
 
 .photo-card {

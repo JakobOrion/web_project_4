@@ -14,3 +14,7 @@
 .photo-card__heart:hover {
   opacity: .6;
 }
+
+.photo-card__heart:focus {
+  outline: none;
+}

@@ -1,7 +1,9 @@
 .photo-card__info {
-  display: flex;
+  display: grid;
+  grid-auto-rows: 1fr 1fr;
+  grid-template-columns: 1fr 20px;
+  justify-items: center;
   align-items: center;
-  justify-content: space-between;
   background-color: #fff;
-  padding: 25px 14px 25px 23px;
+  padding: 21px;
 }

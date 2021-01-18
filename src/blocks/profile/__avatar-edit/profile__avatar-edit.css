@@ -1,0 +1,27 @@
+.profile__avatar-edit {
+  position: relative;
+  top: 0;
+  right: 100%;
+  min-width: 120px;
+  min-height: 120px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.8);
+  background-image: url('../../../images/edit.svg');
+  background-size: 26px;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+  cursor: pointer;
+}
+
+.profile__avatar-edit:hover {
+  opacity: 1;
+}
+
+.profile__avatar-edit:focus {
+  outline: none;
+}

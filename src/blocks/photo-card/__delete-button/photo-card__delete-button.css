@@ -13,7 +13,10 @@
   cursor: pointer;
 }
 
-
 .photo-card__delete-button:hover {
   opacity: .6;
+}
+
+.photo-card__delete-button:focus {
+  outline: none;
 }
