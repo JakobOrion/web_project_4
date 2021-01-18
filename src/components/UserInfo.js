@@ -12,10 +12,6 @@ class UserInfo {
     }
   }
 
-  getUserId(userInfo) {
-    return userInfo._id;
-  }
-
   setUserInfo({name, about, avatar}) {
     this._profileName.textContent = name;
     this._profileJob.textContent = about;
