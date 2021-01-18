@@ -5,6 +5,7 @@ import { submitProfileInfo, submitNewCard, submitAvatar } from '../utils/utils.j
 import FormValidator from '../components/FormValidator.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import PopupWithImage from '../components/PopupWithImage.js';
+import PopupButton from '../components/PopupButton.js';
 import Section from '../components/Section.js';
 import Api from '../components/Api.js';
 
@@ -22,9 +23,12 @@ export const cardSection = new Section(
   {renderer: createNewCard},
   '.photo-cards__group');
 
+export let userIdInfo;
+
 // Load profile info and cards
 api.getAppInfo()
 .then(([userInfo, cardList]) => {
+  userIdInfo = user.getUserId(userInfo)
   user.setUserInfo(userInfo)
   user.setUserAvatar(userInfo)
   cardSection.renderItems(cardList)
@@ -54,6 +58,16 @@ export const viewImagePopup = new PopupWithImage(
   '.popup_type_image'
   );
 viewImagePopup.setEventListeners();
+
+export const deleteCardPopup = new PopupButton(
+  '.popup_type_delete-card',
+   ([cardId, cardElement]) => {
+      api.removeCard(cardId)
+        .then(deleteCardPopup.close(),
+          cardElement.remove())
+    }
+);
+deleteCardPopup.setEventListeners();
 
 // Forms
 allForms.forEach((form) => {

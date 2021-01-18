@@ -3,4 +3,5 @@
   max-width: 120px;
   margin: 0;
   padding: 0;
+  object-fit: cover;
 }

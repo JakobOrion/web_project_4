@@ -54,13 +54,7 @@ export function showCurrentProfile() {
 export function submitNewCard({ name, link }) {
   api.addCard({ name, link })
     .then((res) => {
-      const newCard = createNewCard(
-        {
-          name,
-          link,
-          _id: res._id
-        }
-      );
+      const newCard = createNewCard(res);
       cardSection.addItem(newCard);
       addCardPopup.close();
     })
